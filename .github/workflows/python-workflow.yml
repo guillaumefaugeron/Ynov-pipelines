@@ -19,6 +19,12 @@ jobs:
         run: |
           python3 -m flake8 main.py
           python3 -m flake8 sum.py
+      - uses: psf/black@stable
+        with:
+          options: "--check --verbose"
+          src: "./"
+          jupyter: true
+          version: "21.5b1"
       - name: Test with Pytest
         run: |
           python3 -m pytest sum.py --doctest-modules
