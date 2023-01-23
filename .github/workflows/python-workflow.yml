@@ -1,7 +1,5 @@
 name: python-workflow
-on:
-  push:
-
+on: [workflow_dispatch, push]
 jobs:
   lint_flake8:
     runs-on: ubuntu-latest
