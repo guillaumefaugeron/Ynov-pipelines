@@ -55,7 +55,7 @@ jobs:
 
   coverage:
     name: Coverage
-    needs: tests
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: "Check out the repo"
@@ -79,6 +79,7 @@ jobs:
         run: |
           python -m tox -e coverage
           export TOTAL=$(python -c "import json;print(json.load(open('coverage.json'))['totals']['percent_covered_display'])")
+          echo $TOTAL
           echo "total=$TOTAL" >> $GITHUB_ENV
           echo "### Total coverage: ${TOTAL}%" >> $GITHUB_STEP_SUMMARY
 
