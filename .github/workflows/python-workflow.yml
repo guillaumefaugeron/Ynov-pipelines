@@ -20,9 +20,9 @@ jobs:
           python3 -m flake8 main.py
           python3 -m flake8 sum.py
       - name: Lint with black
-        uses: psf/black@stable
         run: |
           pip install black==21.5b1
+          python -m black main.py
         with:
           options: "--check --verbose"
           src: "./"
