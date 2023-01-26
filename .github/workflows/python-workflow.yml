@@ -81,6 +81,7 @@ jobs:
           git config --global user.name "guillaumefaugeron"
           git add -A
           git status
+          ls
           git commit -m "Update coverage.svg" || echo "No changes to commit"
       - name: Push changes
         uses: ad-m/github-push-action@master
