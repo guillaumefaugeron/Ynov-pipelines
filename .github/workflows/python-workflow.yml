@@ -108,6 +108,10 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v1
   deploy:
+    on:
+      push:
+        branches:
+          - 'main'
     environment:
       name: Production
     runs-on: ubuntu-latest
