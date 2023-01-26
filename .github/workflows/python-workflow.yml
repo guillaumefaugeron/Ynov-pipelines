@@ -80,7 +80,7 @@ jobs:
           git config --global user.email "guillaume.faugeron@ynov.com"
           git config --global user.name "guillaumefaugeron"
           git add -A
-          git add htmlcov
+          git add htmlcov -f
           git status
           ls
           git commit -m "Update coverage.svg" || echo "No changes to commit"
