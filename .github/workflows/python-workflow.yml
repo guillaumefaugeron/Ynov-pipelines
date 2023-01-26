@@ -98,6 +98,7 @@ jobs:
       - name: Commit files
         run: |
           ls
+          git pull
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
