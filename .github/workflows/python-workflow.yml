@@ -74,11 +74,12 @@ jobs:
         run: |
           python3 -m pytest --cov=. . --doctest-modules --ignore=main.py
           coverage-badge -o coverage.svg -f
+          coverage html
       - name: Commit files
         run: |
           git config --global user.email "guillaume.faugeron@ynov.com"
           git config --global user.name "guillaumefaugeron"
-          git add coverage.svg
+          git add -A
           git commit -m "Update coverage.svg" || echo "No changes to commit"
       - name: Push changes
         uses: ad-m/github-push-action@master
