@@ -85,17 +85,6 @@ jobs:
         with:
           name: coverage
           path: coverage.svg
-#      - name: Commit files
-#        run: |
-#          git config --global user.email "guillaume.faugeron@ynov.com"
-#          git config --global user.name "guillaumefaugeron"
-#          git add -A
-#          git add htmlcov -f
-#          git commit -m "Update coverage.svg" || echo "No changes to commit"
-#      - name: Push changes
-#        uses: ad-m/github-push-action@master
-#        with:
-#          branch: "main"
   deploy-cov:
     needs: coverage
     environment:
@@ -109,16 +98,12 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: htmlcov
-      - name: Update files
-        run: |
-            ls
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          # Upload entire repository
-          path: 'htmlcov'
+          path: '.'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
