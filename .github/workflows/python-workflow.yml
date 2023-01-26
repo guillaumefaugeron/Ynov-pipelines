@@ -108,10 +108,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v1
   deploy:
-    on:
-      push:
-        branches:
-          - 'main'
+    if: github.ref == 'refs/heads/main'
     environment:
       name: Production
     runs-on: ubuntu-latest
